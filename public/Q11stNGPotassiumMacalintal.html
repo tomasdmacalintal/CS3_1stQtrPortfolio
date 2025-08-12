@@ -21,20 +21,25 @@
     <div style="width: 95%; height: 60%; background-color: brown; 
                 border-radius: 15px; opacity: 95%; margin: 0 auto; 
                 position: fixed; left: 2.5%; top: 25%;">
-        <h1 style="color: white;">HOW MANY BURGERS TO LAST A LIFETIME? 
-                                    (3 meals a day) <br>vvv</h1>
+        <h1 style="color: white;">HOW MANY BURGERS TO LAST A LIFETIME? <br>vvv</h1>
     </div>
     <div style="width: 100%; height: fit-content; background-color: wheat; 
                 position: absolute; left: 0; margin-top: 100vh; 
                 text-align: center; font-size: 10em; color: brown;">
         <script>
-            var age = 14;
-            var maxAge = 67;
-            var numPerDay = 3;
-            var totalRequired = (numPerDay * 365) * (maxAge - age);
-            document.write(`You will need ${totalRequired} burger 
-                            meals to last you until the ripe old 
-                            age of ${maxAge}.`);
+            var age = window.prompt("How old are you?", "14");
+            var maxAge = window.prompt("How old do you think you will last?", "67");
+            var numPerDay = window.prompt("How many burgers do you eat in a day?", "3");
+            sure = window.confirm(`Are you sure? age = ${age}, maxAge = ${maxAge}, numPerDay = ${numPerDay}`)
+            if (!sure)
+                document.write("TRY AGAIN BRO")
+            else{
+                var totalRequired = (numPerDay * 365) * (maxAge - age);
+                document.write(`With ${numPerDay} burger meal/s a day, you
+                                will need ${totalRequired} burger 
+                                meals to last you until the ripe old 
+                                age of ${maxAge}.`);
+            }
 
         </script>
     </div>
