@@ -27,13 +27,30 @@
     <div style="width: 100%; height: fit-content; background-color: wheat; 
                 position: absolute; left: 0; margin-top: 100vh; 
                 text-align: center; font-size: 1em; color: brown;">
-    <label for="age">How old are you?</label>
-    <input type="text" id="age" name="age"><br>
-    <label for="maxAge">How old do you think you will last?</label>
-    <input type="text" id="maxAge" name="maxAge"><br>
-    <label for="numPerDay">How many burgers do you eat in a day?</label>
-    <input type="text" id="numPerDay" name="numPerDay"><br><br>
-    <button type="button">Submit</button>
+    <br><br>
+    <label>How old are you?</label>
+    <input id="age"><br>
+    <label>How old do you think you will last?</label>
+    <input id="maxAge"><br>
+    <label>How many burgers do you eat in a day?</label>
+    <input id="numPerDay"><br><br>
+    <button id="btnSubmit">Submit</button>
+    <br><br><br>
+
+    <script type="text/javascript">
+        const age = document.getElementById("age");
+        const maxAge = document.getElementById("maxAge");
+        const numPerDay = document.getElementById("numPerDay");
+        const btnSubmit = document.getElementById("btnSubmit");
+
+        btnSubmit.addEventListener('click', btn_clicked);
+        function btn_clicked() {
+            document.write(`With ${numPerDay.value} burger meal/s a day, you
+                                will need ${numPerDay.value * (maxAge.value - age.value) * 365} burger 
+                                meals to last you until the ripe old 
+                                age of ${maxAge.value}.`)
+        }
+    </script>
 
     </div>
 </body>
