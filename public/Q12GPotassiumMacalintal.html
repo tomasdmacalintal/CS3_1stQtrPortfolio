@@ -1,0 +1,33 @@
+<html>
+<head>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>Tomas Macalintal of 9-Potassium's 2nd Graded Exercise</h2>
+
+    <label>Enter Meal Price: </label>
+    <input id="meal_price"><br>
+    <label>Give Tip: </label>
+    <input id="tip"><br>
+    <label>Enter Service Charge: </label>
+    <input id="service_charge"><br>
+    <button id="btn_submit">Submit</button><br><br>
+    <p id="total_cost"></p>
+
+    <script>
+        const mealPrice = document.getElementById("meal_price");
+        const tip = document.getElementById("tip");
+        const serviceCharge = document.getElementById("service_charge");
+        const btn = document.getElementById("btn_submit");
+
+        btn.addEventListener('click', totalMeal);
+        function totalMeal() {
+            totalCost = parseFloat(mealPrice.value) + parseFloat(tip.value) + (parseFloat(serviceCharge.value) / 100 * parseFloat(mealPrice.value));
+            document.getElementById("total_cost").innerHTML = "Total Cost: " + totalCost.toFixed(2);
+
+        }
+    </script>
+</body>
+</html>
