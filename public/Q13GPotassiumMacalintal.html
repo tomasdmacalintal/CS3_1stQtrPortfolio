@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1 3rd Graded</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+   <h2> Q1 3rd Graded Exercise submitted by Tomas Macalintal of 9Potassium</h2>
+   
+   <label>Guess the number: ****</label><br><br>
+   <label>The number is from 1 to 100</label><br><br>
+   <label>Enter your guess: </label>
+   <input id="guess"><br><br>
+   <button id="btn_submit">Submit</button><br><br>
+   <p id="result">Result:</p>
+   <p id="try">Can you guess the number with the least number of tries?<br>
+               Tries:</p>
+
+
+    <script>
+        const guess = document.getElementById("guess");
+        const btn = document.getElementById("btn_submit");
+        var tries = 0;
+        var stopChecking = false;
+
+        var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
+        console.log("For checking, the number is " + dNumber);
+
+        btn.addEventListener('click', checkIt);
+        function checkIt() {
+            if (!stopChecking) {
+                if (guess.value == dNumber){
+                    document.getElementById("result").innerHTML = "Result: You are correct!";
+                    document.getElementById("try").innerHTML = "Congratulations! You successfully guessed the number! <br> Tries:" + (tries + 1);
+                    stopChecking = true;
+                }
+                if (guess.value > dNumber)
+                    document.getElementById("result").innerHTML = "Result: Your guess is higher than the number.";
+                if (guess.value < dNumber)
+                    document.getElementById("result").innerHTML = "Result: Your guess is lower than the number.";
+                
+                if (!stopChecking) {
+                    tries += 1;
+                    document.getElementById("try").innerHTML = "Can you guess the number with the least amount of tries? <br> Tries:" + tries;
+                }
+            }
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

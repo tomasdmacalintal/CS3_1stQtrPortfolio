@@ -1,20 +1,57 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Q1 2nd Graded</title>
     <style>
+        body{
+            text-align: center;
+            font-family: 'Ubuntu', sans-serif;
+            color: darkslategray;
+            background-color: powderblue;
+        }
+        label{
+            text-align: center;
+        }
+        button{
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: rgb(205, 242, 255);
+            color: darkslategray;
+            border-color: darkslategray;
+            border-radius: 5px;
+           
+        }
+        p{
+            text-align: center;
+        }
+        input{
+            border-radius: 5px;
+            border-color: darkslategray;
+        }
         
     </style>
 </head>
 <body>
-    <h2>Tomas Macalintal of 9-Potassium's 2nd Graded Exercise</h2>
+
+    <h2>Q1 2nd Graded Exercise submitted by Tomas Macalintal of 9Potassium</h2>
+    <img id="tomas" src="https://raw.githubusercontent.com/tomasdmacalintal/CS3_1stQtrPortfolio/main/assets/images/selfie.jpg" alt="Tomas' Selfie" style="width: 15%; height: auto;">
+    <h3>Thank you for choosing us! Please enter these details:</h3>
 
     <label>Enter Meal Price: </label>
     <input id="meal_price"><br>
     <label>Give Tip: </label>
     <input id="tip"><br>
     <label>Enter Service Charge: </label>
-    <input id="service_charge"><br>
-    <button id="btn_submit">Submit</button><br><br>
-    <p id="total_cost"></p>
+    <input id="service_charge"><br><br>
+    <button id="btn_submit">Order</button><br>
+    <p id="total_meal">Total Meal:</p>
+    <p id="thanks"></p>
+    <p id="or_else" style="color: crimson; font-weight: bold;"></p>
 
     <script>
         const mealPrice = document.getElementById("meal_price");
@@ -25,7 +62,10 @@
         btn.addEventListener('click', totalMeal);
         function totalMeal() {
             totalCost = parseFloat(mealPrice.value) + parseFloat(tip.value) + (parseFloat(serviceCharge.value) / 100 * parseFloat(mealPrice.value));
-            document.getElementById("total_cost").innerHTML = "Total Cost: " + totalCost.toFixed(2);
+            document.getElementById("total_meal").innerHTML = "Total Meal: " + totalCost.toFixed(2);
+            document.getElementById("thanks").innerHTML = "Thank you. We hope to see you again.";
+            document.getElementById("or_else").innerHTML = "Or else.";
+            document.getElementById("tomas").style = "width: 15%; height: auto; filter: contrast(100) brightness(0.5);";
 
         }
     </script>
