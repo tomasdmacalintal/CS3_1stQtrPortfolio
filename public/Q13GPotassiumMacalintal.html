@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title>Q1 3rd Graded</title>
     <style>
-
+        body{
+            background-color: darkslategray;
+            color: darkslategray;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        button{
+            width: 100px;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: rgb(205, 242, 255);
+            color: darkslategray;
+            border-color: darkslategray;
+            border-radius: 5px;
+           
+        }
+        input{
+            border-radius: 5px;
+            border-color: darkslategray;
+        }
     </style>
 </head>
 <body>
 
+   <div style="width: 46%; height: 100vh; background-color: powderblue; position: fixed; left: 0; top: 0; padding: 2%;">
    <h2> Q1 3rd Graded Exercise submitted by Tomas Macalintal of 9Potassium</h2>
-   
+    
    <label>Guess the number: ****</label><br><br>
    <label>The number is from 1 to 100</label><br><br>
    <label>Enter your guess: </label>
@@ -18,7 +39,13 @@
    <p id="result">Result:</p>
    <p id="try">Can you guess the number with the least number of tries?<br>
                Tries:</p>
+    </div>
 
+    <div style="width: 50%; height: 100vh; background-color: darkslategray; position: fixed; right: 0; top: 0;">
+    
+        <p id="status" style="text-align: center; font-size: 6.7em;">&#x1F913;</p>
+    
+    </div>
 
     <script>
         const guess = document.getElementById("guess");
@@ -35,12 +62,20 @@
                 if (guess.value == dNumber){
                     document.getElementById("result").innerHTML = "Result: You are correct!";
                     document.getElementById("try").innerHTML = "Congratulations! You successfully guessed the number! <br> Tries:" + (tries + 1);
+                    document.getElementById("status").innerHTML = "&#x1F913;&#x1F44D;";
+                    console.log("correct");
                     stopChecking = true;
                 }
-                if (guess.value > dNumber)
+                if (guess.value > dNumber){
                     document.getElementById("result").innerHTML = "Result: Your guess is higher than the number.";
-                if (guess.value < dNumber)
+                    document.getElementById("status").innerHTML = "&#x1F913;&#x261D;";
+                    console.log("guess is higher");
+                }
+                if (guess.value < dNumber){
                     document.getElementById("result").innerHTML = "Result: Your guess is lower than the number.";
+                    document.getElementById("status").innerHTML = "&#x1F913;&#x1F447;";
+                    console.log("guess is lower");
+                }
                 
                 if (!stopChecking) {
                     tries += 1;
