@@ -1,7 +1,6 @@
 # Tomas Macalintal's Reflections of 1st Quarter
-![HTML Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/250px-HTML5_logo_and_wordmark.svg.png)
-![JavaScript Logo](https://wildcardcorp.com/image-repository/javascript-icon.png/@@images/image.png)
-![CSS Logo](https://1000logos.net/wp-content/uploads/2020/09/CSS-Logo-2011-500x281.png)
+![HTML, JS, CSS Logo](https://global.discourse-cdn.com/sitepoint/original/3X/b/5/b59a78e2ed76c705f3c0dcb300f3f222aefdcd99.png)
+
 ## Topics I Know Very Well
 
 ### Repetition Control Structures
